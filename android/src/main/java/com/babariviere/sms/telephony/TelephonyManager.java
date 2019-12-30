@@ -1,5 +1,6 @@
 package com.babariviere.sms.telephony;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
@@ -21,6 +22,7 @@ public class TelephonyManager {
         return this.getManager().getPhoneCount();
     }
 
+    @SuppressLint("MissingPermission")
     public String getSimId(int slotId) {
         return this.getManager().getDeviceId(slotId);
     }
