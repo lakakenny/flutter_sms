@@ -18,18 +18,28 @@ class Thread extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new ListTile(
-      dense: true,
-      leading: new Avatar(thread.contact.thumbnail, thread.contact.fullName),
-      title: new Text(thread.contact.fullName ?? thread.contact.address),
-      subtitle: new Text(
-        thread.messages.first.body.trim(),
-        maxLines: 2,
-        overflow: TextOverflow.ellipsis,
+    return Center(
+        child: Row(
+      children: <Widget>[
+        Text(thread.contact.fullName ?? thread.contact.address),
+        Badge(thread.messages)
+      ],
+    )
+        /*child: new ListTile(
+        dense: true,
+        leading: new Avatar(thread.contact.thumbnail, thread.contact.fullName),
+        title: new Text(thread.contact.fullName ?? thread.contact.address),
+        subtitle: new Text(
+          thread.messages.first.body.trim(),
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+        ),
+        
+        trailing: new Badge(thread.messages),
+        onTap: () => _showConversation(context),
       ),
-      trailing: new Badge(thread.messages),
-      onTap: () => _showConversation(context),
-    );
+      */
+        );
   }
 
   void _showConversation(BuildContext context) {

@@ -39,31 +39,31 @@ public class SmsPlugin {
         new EventChannel(registrar.messenger(), CHANNEL_SMS_STATUS, JSONMethodCodec.INSTANCE)
                 .setStreamHandler(new SmsStateHandler(registrar));
 
-        /// SMS sender
-        final SmsSender sender = new SmsSender(registrar);
-        final MethodChannel sendSmsChannel = new MethodChannel(registrar.messenger(),
-                CHANNEL_SEND, JSONMethodCodec.INSTANCE);
-        sendSmsChannel.setMethodCallHandler(sender);
+//        /// SMS sender
+//        final SmsSender sender = new SmsSender(registrar);
+//        final MethodChannel sendSmsChannel = new MethodChannel(registrar.messenger(),
+//                CHANNEL_SEND, JSONMethodCodec.INSTANCE);
+//        sendSmsChannel.setMethodCallHandler(sender);
 
         /// SMS query
         final SmsQuery query = new SmsQuery(registrar);
         final MethodChannel querySmsChannel = new MethodChannel(registrar.messenger(), CHANNEL_QUER, JSONMethodCodec.INSTANCE);
         querySmsChannel.setMethodCallHandler(query);
 
-        /// Contact query
-        final ContactQuery contactQuery = new ContactQuery(registrar);
-        final MethodChannel queryContactChannel = new MethodChannel(registrar.messenger(), CHANNEL_QUER_CONT, JSONMethodCodec.INSTANCE);
-        queryContactChannel.setMethodCallHandler(contactQuery);
+//        /// Contact query
+//        final ContactQuery contactQuery = new ContactQuery(registrar);
+//        final MethodChannel queryContactChannel = new MethodChannel(registrar.messenger(), CHANNEL_QUER_CONT, JSONMethodCodec.INSTANCE);
+//        queryContactChannel.setMethodCallHandler(contactQuery);
 
-        /// Contact Photo query
-        final ContactPhotoQuery contactPhotoQuery = new ContactPhotoQuery(registrar);
-        final MethodChannel queryContactPhotoChannel = new MethodChannel(registrar.messenger(), CHANNEL_QUER_CONT_PHOTO, StandardMethodCodec.INSTANCE);
-        queryContactPhotoChannel.setMethodCallHandler(contactPhotoQuery);
+//        /// Contact Photo query
+//        final ContactPhotoQuery contactPhotoQuery = new ContactPhotoQuery(registrar);
+//        final MethodChannel queryContactPhotoChannel = new MethodChannel(registrar.messenger(), CHANNEL_QUER_CONT_PHOTO, StandardMethodCodec.INSTANCE);
+//        queryContactPhotoChannel.setMethodCallHandler(contactPhotoQuery);
 
-        /// User Profile
-        final UserProfileProvider userProfileProvider = new UserProfileProvider(registrar);
-        final MethodChannel userProfileProviderChannel = new MethodChannel(registrar.messenger(), CHANNEL_USER_PROFILE, JSONMethodCodec.INSTANCE);
-        userProfileProviderChannel.setMethodCallHandler(userProfileProvider);
+//        /// User Profile
+//        final UserProfileProvider userProfileProvider = new UserProfileProvider(registrar);
+//        final MethodChannel userProfileProviderChannel = new MethodChannel(registrar.messenger(), CHANNEL_USER_PROFILE, JSONMethodCodec.INSTANCE);
+//        userProfileProviderChannel.setMethodCallHandler(userProfileProvider);
 
         //Sim Cards Provider
         new MethodChannel(registrar.messenger(), CHANNEL_SIM_CARDS, JSONMethodCodec.INSTANCE)
